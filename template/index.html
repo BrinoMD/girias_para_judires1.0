@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gírias para Juridiquês</title>
+  <meta charset="UTF-8">
+  <title>Tradutor de Gírias para Juridiquês</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e9ecef;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,38 +15,46 @@
     }
 
     .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       max-width: 500px;
       width: 100%;
+      text-align: center;
     }
 
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #343a40;
     }
 
-    textarea {
+    input[type="text"] {
       width: 100%;
-      height: 100px;
-      padding: 1rem;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ced4da;
       font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: none;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007bff;
+      outline: none;
     }
 
     button {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
       font-size: 1rem;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
     }
 
     button:hover {
@@ -57,17 +64,11 @@
 </head>
 <body>
   <div class="container">
-    <h1>Como você diria isso em "Juridiquês"?</h1>
-    <textarea id="userAnswer" placeholder="Digite sua resposta..."></textarea>
-    <button onclick="submitAnswer()">Enviar</button>
+    <h2>Como você diria isso em "Juridiquês"?</h2>
+    <form method="post">
+      <input type="text" name="girias" placeholder="Digite uma gíria ou frase informal..." required>
+      <button type="submit">Traduzir</button>
+    </form>
   </div>
-
-  <script>
-    function submitAnswer() {
-      const answer = document.getElementById('userAnswer').value;
-      console.log('Resposta enviada:', answer);
-      alert("Resposta enviada! (simulada)");
-    }
-  </script>
 </body>
 </html>
